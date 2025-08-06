@@ -8,30 +8,12 @@ on:
 jobs:
   run-python:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v3
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
-
-      - name: Set Timezone to IST
-        run: |
-          sudo timedatectl set-timezone Asia/Kolkata
-          echo "Current Timezone: $(date)"
-
-
-      - name: Run Market Breadth Script
-        run: |
-        python3 --version
-        python3 my_hello.py
-        
-
-
-        run: |
-          git add Report
-          git commit -m "Auto-generated report at `date +'%Y-%m-%d_%H:%M'`" || echo "No changes to commit"
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+          python-version: "3.10"
+      - name: Run script
+        run: python my_hello.py
