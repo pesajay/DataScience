@@ -1,2 +1,2 @@
 # DataScience
-This is Data Science trial
+This is Data Science trial and practice kit
